@@ -1,0 +1,28 @@
+\int_{-\infty}^{\infty} e^{-x^2} dx 
+I
+I^2
+I^2 =[ \int_{-\infty}^{\infty} e^{-x^2} dx ] [ \int_{-\infty}^{\infty} e^{-x^2} dx ]   
+[ \int_{-\infty}^{\infty} e^{-x^2} dx ] [ \int_{-\infty}^{\infty} e^{-x^2} dx ]   
+[ \int_{-\infty}^{\infty} e^{-x^2} dx ] [ \int_{-\infty}^{\infty} e^{-y^2} dy ]   
+\int_{-\infty}^{\infty}\int_{-\infty}^{\infty} e^{- (x^2+y^2)} dxdy 
+x^2 + y^2 = r^2
+dx dy = r dr d\theta 
+\rightarrow \int_{r=0}^{\infty} \int_{\theta=0}^{2\pi} e^{-r^2} r dr d\theta 
+= \int_0^{2\pi} d \theta \int_0^\infty r e^{-r^2} dr 
+=2\pi \int_0^\infty r e^{-r^2} dr 
+u = r^2 
+du = 2 r dr 
+\rightarrow \pi \int_0^\infty e^{-u} du 
+= \pi [- e^{-u} ]_0^{\infty}
+= \pi [ e^{-u}]_{\infty}^0
+= \pi [\frac{1}{e^u}]_{\infty}^0
+= \pi [\frac{1}{e^0} - \lim_{u \to \infty} \frac{1}{e^u}]
+= \pi [\frac{1}{1} - \lim_{u \to \infty} \frac{1}{e^u}]
+= \pi [1 - 0]
+= \pi 1 
+= \pi 
+= \pi = I^2
+\int_{-\infty}^\infty e^{-x^2} dx = I 
+\int_{-\infty}^\infty e^{-x^2} dx = I = \sqrt{I^2} 
+\int_{-\infty}^\infty e^{-x^2} dx = \sqrt{I^2} 
+\int_{-\infty}^\infty e^{-x^2} dx = \sqrt{\pi} 
