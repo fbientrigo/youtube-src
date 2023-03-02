@@ -4,7 +4,7 @@ import numpy as np
 class Fubini(Scene):
     def construct(self):
         # read equations from file
-        with open("integralsqrtpi.txt", "r") as f:
+        with open("integralfubini.txt", "r") as f:
             equations = f.readlines()
 
         # write equations in Manim with transitions
@@ -48,6 +48,8 @@ class Fubini(Scene):
         self.play(Transform(equation_mob, new_mob))
         self.wait(1) #ecuacion a resolver
 
+        self.play(FadeOut(changevar1, duration=0.3))
+        self.play(FadeOut(changevar2, duration=0.3))
 
         for i in range(14, len(equations)): 
             new_mob = MathTex(equations[i])

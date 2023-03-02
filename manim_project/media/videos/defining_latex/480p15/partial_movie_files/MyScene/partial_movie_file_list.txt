@@ -1,0 +1,7 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/fbien.DESKTOP-6FMEAR7/Documents/# Proyectos/Fabi Profe/youtube-src/manim_project/media/videos/defining_latex/480p15/partial_movie_files/MyScene/4266129954_3307790270_223132457.mp4'
+file 'file:C:/Users/fbien.DESKTOP-6FMEAR7/Documents/# Proyectos/Fabi Profe/youtube-src/manim_project/media/videos/defining_latex/480p15/partial_movie_files/MyScene/1442284246_2625645954_3748286569.mp4'
+file 'file:C:/Users/fbien.DESKTOP-6FMEAR7/Documents/# Proyectos/Fabi Profe/youtube-src/manim_project/media/videos/defining_latex/480p15/partial_movie_files/MyScene/1442284246_386569709_668998558.mp4'
+file 'file:C:/Users/fbien.DESKTOP-6FMEAR7/Documents/# Proyectos/Fabi Profe/youtube-src/manim_project/media/videos/defining_latex/480p15/partial_movie_files/MyScene/1442284246_1076466279_2088037381.mp4'
+file 'file:C:/Users/fbien.DESKTOP-6FMEAR7/Documents/# Proyectos/Fabi Profe/youtube-src/manim_project/media/videos/defining_latex/480p15/partial_movie_files/MyScene/1442284246_4199973841_1794090798.mp4'
+file 'file:C:/Users/fbien.DESKTOP-6FMEAR7/Documents/# Proyectos/Fabi Profe/youtube-src/manim_project/media/videos/defining_latex/480p15/partial_movie_files/MyScene/1442284246_1076466279_873042386.mp4'

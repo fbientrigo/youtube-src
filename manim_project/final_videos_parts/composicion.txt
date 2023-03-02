@@ -1,0 +1,13 @@
+la presentación entrega un poco más sobre que es la funcion gamma;
+tambien entremedio haz de introducir la expansión de una función como la exponencial mediante serie de potencias
+(insertar Taylor antes de introducir la razón de Phi_n)
+
+Luego va Fubini, que se refiere a esta integreal que se realiza mediante esta tecnica
+
+y luego Expansion, donde se utiliza la expansion de la exponencial y se aplican las reglas de brakets.
+
+Luego mas adelante del video se entrega una derivación de la regla de multiplicación.
+
+___
+
+[] entonces nos ponemos a realizar integrales más complicadas con la misma metodologia y aparte ahorramos escribir un poco
