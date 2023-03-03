@@ -47,16 +47,35 @@ class Multiplication(Scene):
         cambiovar2_2 = MathTex(r'dx = \frac{dt}{\alpha (t^{\frac{1}{\alpha}})^{\alpha - 1}}')
         cambiovar2_2.next_to(cambiovar, DOWN)
         self.play(Transform(cambiovar2, cambiovar2_2))
-        self.wait(q)
-        integral2 = MathTex(r'\int_{0}^{\infty} (t^{1/\alpha})^{\alpha n + b - 1} \frac{dt}{\alpha (t^{\frac{1}{\alpha}})^{\alpha - 1}}')
+        self.wait(m)
+        integral2 = MathTex(r'\int_{0}^{\infty} (t^{ \frac{1}{\alpha} })^{\alpha n + b - 1} \frac{dt}{\alpha (t^{\frac{1}{\alpha}})^{\alpha - 1}}')
         integral2.next_to(cambiovar, UP)
         self.play(Transform(integral, integral2))
         self.play(FadeOut(cambiovar2))
         self.play(FadeOut(cambiovar))
         self.play(integral.animate.shift(0.5*RIGHT))
         self.play(integral.animate.shift(2*DOWN))
-        self.wait(s)
+        self.wait(m)
         # ahora solo trabajamos con la integral
-        integral_2 = MathTex(r'\int_{0}^{\infty} (t^{1/\alpha})^{\alpha n + b - 1} \frac{dt}{\alpha (t^{\frac{1}{\alpha}})^{\alpha - 1}}')
-
+        integral_2 = MathTex(r'\int_{0}^{\infty} t^{n + \frac{b}{\alpha} - \frac{1}{\alpha}} \frac{dt}{\alpha t^{1 - \frac{1}{\alpha}}} ')
+        self.play(Transform(integral, integral_2))
+        self.wait(s)
+        integral_2 = MathTex(r'\frac{1}{\alpha}\int_{0}^{\infty} t^{n + \frac{b}{\alpha} - \frac{1}{\alpha} - (1 - \frac{1}{\alpha})} dt')
+        self.play(Transform(integral, integral_2))
+        self.wait(s)
+        integral_2 = MathTex(r'\frac{1}{\alpha} \int_{0}^{\infty} t^{n + \frac{b}{\alpha} - \frac{1}{\alpha} - 1 + \frac{1}{\alpha}} dt')
+        self.play(Transform(integral, integral_2))
+        self.wait(s)
+        integral_2 = MathTex(r'\frac{1}{\alpha} \int_{0}^{\infty} t^{n + \frac{b}{\alpha}  - 1 } dt')
+        self.play(Transform(integral, integral_2))
+        self.wait(ss)
+        integralb = MathTex(r'= \langle n + \frac{b}{\alpha} \rangle')
+        self.play(integral.animate.shift(LEFT))
+        integralb.next_to(integral, RIGHT)
+        self.play(Write(integralb))
+        self.wait(ss)
         
+
+
+
+
