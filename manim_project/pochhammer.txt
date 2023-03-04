@@ -1,2 +1,31 @@
+# definicion
+(z)_n = \frac{\Gamma[z+n]}{\Gamma[z]}
+(z)_n = z(z+1)(z+2)\dots(z+n-1)
+
+
+
+# ejemplos
+(z)_0 = \frac{\Gamma[z+0]}{\Gamma[z]} = \frac{\Gamma[z]}{\Gamma[z]} = 1
+
+es recomendable utilizar para calcular los pochhammers
+\Gamma[z+1] = z\Gamma[z]
+
+(z)_1 = \frac{\Gamma[z+1]}{\Gamma[z]} = \frac{z\Gamma[z]}{\Gamma[z]} = z
+
+(z)_2 = \frac{\Gamma[z+2]}{\Gamma[z]} = \frac{(z+1)\Gamma[z+1]}{\Gamma[z]} = \frac{(z+1)z\Gamma[z]}{\Gamma[z]} = z (z+1)
+
+
+
+# propiedades
+(z)_{-n} \space \space \forall \space  n \in \mathbb N 
+(z)_{-n} = \frac{(-1)^n}{(1-z)_n}
+
+(z)_{2n} = 4^n \; (\frac{z}{2})_{n+1} (\frac{z}{2}+\frac{1}{2})_{n}
+
+(z)_{2n+1} = 4^n \cdot 2\; (\frac{z}{2})_{n+1} (\frac{z}{2}+\frac{1}{2})_{n}
+
+\frac{(z)_n}{(z)_m} = (z+m)_{n-m} \space \space \forall n \geq m
+
+
 (2n)! = n! \; (1/2)_n \; 4^n
 
