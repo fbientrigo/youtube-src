@@ -26,7 +26,7 @@ aplicnaod las propiedades una y otra vez podemos obtener el factorial
 0:56 resolvimos asi la gamma de 1/2
 
 // mostrar el concepto de una expansión de taylor, en Taylor.mp4 (por programar)
-
+Las expansiones de Taylor nos permite escribir una funcion como una serie de potencias, para el metodo de brakets estas expansiones son en torno a 0
 
 //cortar, utilizar Presentacion.mp4
 0:26 utilizaremos este simbolo para este objeto, nos ahorrara escribir bastante en las expansiones de funciones
