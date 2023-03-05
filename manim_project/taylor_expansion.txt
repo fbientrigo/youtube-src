@@ -1,0 +1,37 @@
+Alrededor de un punto como es 0 podemos aproximar la función con una serie infinita de potencias:
+$$
+f(x) = \sum_{n=0}^{\infty} a_n x^n
+$$
+
+para cada función estos coeficientes $a_n$ seran distintos
+// hacer graficos donde van apareciendo mas y mas coeficientes mientras muestro la formula
+$$
+e^x = \sum_{n=0}^{\infty} \frac{1}{n!} x^n
+$$
+
+$$
+\frac{1}{1-x} = \sum_{n=0}^{\infty} 1 \cdot x^n
+$$
+
+$$
+\frac{1}{1+x} = \sum_{n=0}^{\infty} (-1)^n \cdot x^n
+$$
+
+algunas veces solo se usan las potencias par, como para el coseno
+$$
+\cos[x] = \sum_{n=0}^{\infty} \frac{(-1)^n}{(2n)!} x^{2n}
+$$
+
+otras veces solo impar
+$$
+\sin[x] = \sum_{n=0}^{\infty} \frac{(-1)^n}{(2n+1)!} x^{2n+1}
+$$
+
+para calcular estos coeficientes al rededor de 0, utilizamos las distintas derivadas de la funcion:
+la derivada enesima de f evaluada en $x_0$ es:
+$$ f^{(n)}(x_0) $$
+
+asi es como se escribe en general la serie de taylor, usaremos $x_0=0$
+$$
+f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(x=0)}{n!} x^n
+$$

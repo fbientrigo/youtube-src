@@ -1,0 +1,75 @@
+Ahora que ya observamos las series de Taylor, es posible escribir de una forma aún más resumidas nuestras series de potencias que representan funciones, las hipergeometricas:
+
+una hipergeometrica lleva escritos los simbolos de pochhammer:
+$$
+f(x) = \,_pF_q[a_1,a_2,..., a_p ; b_1, b_2, ..., b_q | x]
+$$
+
+$$
+f(x) = \sum_{n=0}^{\infty} \frac{ (a_1)_n \dots }{(b_1)_n \dots }  \frac{x^n}{n!}
+$$
+
+los parametros a y b son simbolos de pochhammer, por ejemplo teniendo:
+$$
+f(x) = \,_2F_1[a,b;c| x]
+$$
+
+
+$$
+f(x) = \sum_{n=0}^{\infty} \frac{(a)_n (b)_n}{(c)_n} \frac{x^n}{n!}
+$$
+
+recordemos
+$$
+(a)_n = \frac{\Gamma[a + n]}{\Gamma[\alpha]}
+$$
+
+
+___
+
+$$
+e^x = \sum_{n=0}^{\infty} \frac{1}{n!} x^n
+$$
+
+$$
+\frac{1}{1-x} = \sum_{n=0}^{\infty} 1 \cdot x^n
+$$
+
+$$
+\frac{1}{1+x} = \sum_{n=0}^{\infty} (-1)^n \cdot x^n
+$$
+
+algunas veces solo se usan las potencias par, como para el coseno
+$$
+\cos[x] = \sum_{n=0}^{\infty} \frac{(-1)^n}{(2n)!} x^{2n}
+$$
+
+otras veces solo impar
+$$
+\sin[x] = \sum_{n=0}^{\infty} \frac{(-1)^n}{(2n+1)!} x^{2n+1}
+$$
+
+___
+
+como extra pudes hasta calcular la integrales elipticas, aquellas que consigues intentano resolver el oscilador harmonico sin aproximaciones:
+
+integral eliptica de primera especie:
+$$
+K(k) = \int_0^{\pi/2} \frac{d \theta}{ \sqrt{ 1 - k^2 \sin^2 \theta }  }
+$$
+
+
+$$
+K(k) = \frac{\pi}{2} \, _2F_1 [\frac{1}{2}, \frac{1}{2}; 1 | k^2 ]
+$$
+
+
+la integral eliptica de segunda especie
+$$
+K(k) = \int_0^{\pi/2} \sqrt{ 1 - k^2 \sin^2 \theta } d \theta
+$$
+
+
+$$
+E(k) = \frac{\pi}{2} \, _2F_1 [-\frac{1}{2}, \frac{1}{2}; 1 | k^2 ]
+$$

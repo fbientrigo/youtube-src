@@ -2,6 +2,7 @@
 (z)_n = \frac{\Gamma[z+n]}{\Gamma[z]}
 (z)_n = z(z+1)(z+2)\dots(z+n-1)
 
+los pochhammer son utiles para expresar series de potencias aun más generales, que son las hipergeometricas
 
 
 # ejemplos
@@ -28,4 +29,23 @@ es recomendable utilizar para calcular los pochhammers
 
 
 (2n)! = n! \; (1/2)_n \; 4^n
+
+____
+
+notas al final del video de pochhammer
+en otros textos encontraras esto como el rising factorial, sin embargo algunos textos usan esta misma notación para su contraparte, el falling factorial, no confundirlos
+
+rising fact
+$$
+(x)_n =  \frac{\Gamma[x + n]}{\Gamma[x]}
+$$
+$$
+	=  x(x+1) \dots (x+n-1)
+$$
+
+falling fact, usare esta notación para no confundirte y mostrarte el falling facotrial
+$$
+(x)_{(n)} =  \frac{\Gamma[x + 1]}{\Gamma[x - n + 1]}
+$$
+
 
