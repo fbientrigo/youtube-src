@@ -1,0 +1,175 @@
+# Propiedades de Gamma utilizadas
+
+\Gamma[n+\frac{1}{2}]
+
+para esto utilizaremos la propiedad
+\Gamma[1+z] = z \Gamma[z]
+
+\rightarrow  \Gamma[1+\frac{1}{2}] = \frac{1}{2}\Gamma[\frac{1}{2}]
+
+luego
+\Gamma[2+\frac{1}{2}] = (1+\frac{1}{2}) \Gamma[1+\frac{1}{2}]
+		= (1+\frac{1}{2}) \frac{1}{2} \Gamma[\frac{1}{2}]
+		= \frac{3}{2} \frac{1}{2} \Gamma[\frac{1}{2}]
+
+de esta forma podemos construir distintos gammas:
+\Gamma[3+\frac{1}{2}] = (2+\frac{1}{2}) \Gamma[2+\frac{1}{2}]
+	= (2+\frac{1}{2}) \frac{3}{2} \frac{1}{2} \Gamma[\frac{1}{2}]
+	= \frac{5}{2} \frac{3}{2} \frac{1}{2} \Gamma[\frac{1}{2}]
+
+## Propiedades de Pochhammer
+
+(\frac{1}{2})_n = (\frac{1}{2}) (\frac{1}{2} +1 ) \dots (\frac{1}{2} + n-1)
+
+asi
+(\frac{1}{2})_2 =(\frac{1}{2}) (\frac{1}{2}+1) = \frac{1}{2} \frac{3}{2}
+
+(\frac{1}{2})_3 = \frac{1}{2} \frac{3}{2} \frac{5}{2}  
+
+
+observesé la similitud, y es que proviene de la propia definición
+
+(\frac{1}{2})_n = \frac{\Gamma[n+\frac{1}{2}]}{\Gamma[\frac{1}{2}]}
+
+reordenandola:
+
+\Gamma[n+\frac{1}{2}] = (\frac{1}{2})_n  \Gamma[\frac{1}{2}]
+
+de esta manera podemos encontrar cualquier Gamma que sea un numero dividio en 2
+____
+
+en algunos ejercicios puede serte util esta formula
+
+\Gamma[z] \Gamma[1-z] = \frac{\pi}{\sin{\pi z}}
+
+____
+
+# mostrar las integrales hechas con la funcion beta y gamma
+
+
+
+
+- conclusion
+como observamos el conocer estas funciones nos permite reducir el problema de integral avanzada al de resolver ecuaciones lineales.
+
+
+
+____
+
+# el braket
+el metodo de brakets es una tecnica de integración novedosa basada en el teorema maestro de ramanujan, incorporando una serie de reglas encontradas mediante la experimentación y refinamiento. 
+
+Es posible de esta manera integrar sin calculo avanzado y usando algebra lineal resolver estas integrales. Nos basaremos sobre todo en la integral de la función gamma asi que te recomiendo revisar las tarjetas de estudio en la descripción.
+
+Comenzare con la forma integral completa para observar como afecta directametne a las integrales, despues introduciremos nueva notación que hara todo más facil.
+
+la integral a primera instancia tiene esta forma, es una serie de integrales
+
+$$ 
+S = \sum_{k_1 =0}^\infty \frac{(-1)^{k_1}}{(k_1)!} \int_0^\infty x^{k_1 + 2 - 1} dx
+$$
+
+el resultado de esta serie de integrales es \Gamma(2)
+
+pero como llegamos a ello?
+
+para facilitar se hará uso de nueva notación, primero definimos el braket:
+
+
+\int_0^\infty x^{k_1 + 2 - 1} dx = \langle k_1+2 \rangle
+
+eventualmente querremos resolver el termino que lleva dentro igualando a 0,
+$k_1 = -2$
+
+Al tener una serie de bvrakets, por regla la sumatoria de k_1 y $\frac{(-1)^{k_1}}{(k_1)!}$ son reemplazadas por una función de gamma $\Gamma(-k_1)$ 
+
+entonces usamos la ecuacion dentro del braket para encontrar el valor de $k_1 = -2 $
+
+$$
+S = \sum_{k_1 =0}^\infty \frac{(-1)^{k_1}}{(k_1)!} \int_0^\infty x^{k_1 + 2 - 1} dx = \Gamma(-k_1) |_{k_1 = -2} = \Gamma(2)
+$$
+
+Para facilitar le entregamos notacion a las estrucutras que mas utilizamos, entre ellas esta
+
+\phi_{k_1} = \frac{(-1)^{k_1}}{(k_1)!}
+
+lo cual se llama indicador, notese que toma valores positivo y negativo en cada numero entero, (grafico de esto), de esta manera la suma de objetos infinitos nos puede entregar algo finito
+
+(recomiendo mucho la pelicula del hombre que vio el infinito que sigue la historia de Ramanujan)
+
+con esta nueva notación podemos definir las reglas de manera más facil
+
+$$ 
+S = \sum_{k_1 =0}^\infty \frac{(-1)^{k_1}}{(k_1)!} \int_0^\infty x^{k_1 + 2 - 1} dx
+$$
+
+S = \sum_{k_1 =0}^\infty \phi_{k_1} \langle k_1 + 2 \rangle 
+
+entonces al tener una suma de brakets:
+\sum_{k_1} \phi_{k_1} \righarrow \Gamma[-k_1]
+
+el braket desaparecera y solo evaluaremos el valor de k_1 resolviendo la ecuacion en su interior
+
+k_1 + 2 = 0
+k_1 = -2
+
+de esa manera nuestra expresión queda
+
+S = \sum_{k_1 =0}^\infty \phi_{k_1} \langle k_1 + 2 \rangle 
+
+S = \Gamma[-k_1] |_{k_1 + 2=0}
+
+S = \Gamma[-k_1] |_{k_1 =-2}
+
+S = \Gamma[2]
+
+________________
+
+Procedamos a otro ejemplo:
+
+A = \sum_{n \geq 0} \phi_n 4^n \langle n + \frac{3}{2} \rangle 
+
+pausa el video e intenta resolverlo,
+aplicamos primero la regla de eliminar sumatorias
+
+\sum_{n \geq 0} \phi_n \rightarrow \Gamma[-n]
+
+el braket se convierte en una evaluación:
+\langle n + \frac{3}{2} \rangle 
+
+
+n + \frac{3}{2} = 0
+
+n = - \frac{3}{2}
+
+
+asi aplicado
+
+A = \sum_{n \geq 0} \phi_n 4^n \langle n + \frac{3}{2} \rangle 
+
+A = \Gamma[-n] 4^n |_{n = - \frac{3}{2}}
+
+A = \Gamma[\frac{3}{2}] 4^{- \frac{3}{2}}
+
+A = \Gamma[\frac{3}{2}] \frac{1}{4^{\frac{3}{2}}}
+
+A = \Gamma[\frac{3}{2}] \frac{1}{2^{3}}
+
+A = \Gamma[\frac{3}{2}] \frac{1}{8}
+
+y podemos resolver esta gamma como la que vimos previamente:
+
+\Gamma[\frac{3}{2}] = \frac{1}{2} \Gamma[\frac{1}{2}]
+		= \frac{1}{2} \sqrt{\pi}
+
+A = \Gamma[\frac{3}{2}] \frac{1}{8}
+
+A = \frac{1}{2} \sqrt{\pi} \frac{1}{8}
+
+A = \frac{sqrt{\pi}}{16}
+
+_________
+
+
+
+

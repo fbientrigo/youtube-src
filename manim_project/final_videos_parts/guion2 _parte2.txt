@@ -1,0 +1,156 @@
+Ahora que ocurre con integrales como estas donde no tenemos
+sumatorias:
+
+I = \int_0^\infty t^{-5/2} e^{-t} dt
+
+en tal caso podemos usar las series de taylor, series de potencias en t de las funciones:
+
+e^{-t} = \sum_{n \geq 0} \frac{1}{n!} (-t)^n
+
+e^{-t} = \sum_{n \geq 0} \frac{1}{n!} (-1)^n t^n
+
+e^{-t} = \sum_{n \geq 0} \phi_n t^n
+
+entonces reemplazando
+
+
+I = \int_0^\infty t^{-5/2} e^{-t} dt
+
+I = \int_0^\infty t^{-5/2} \sum_{n \geq 0} \phi_n t^n dt
+
+ahora reordenamos y sacamos la sumatoria de la integral, todo lo que no tenga un factor de t:
+
+I = \sum_{n \geq 0} \phi_n \int_0^\infty t^{- 5/2}  t^n dt
+
+entonces sumamos las potencias
+
+I = \sum_{n \geq 0} \phi_n \int_0^\infty t^{n - 5/2} dt
+
+para crear un braket debe de tener un -1, asi que sumamos por 1 y restamos por 1 en la potencia
+
+I = \sum_{n \geq 0} \phi_n \int_0^\infty t^{n - 5/2 + 1 - 1} dt
+
+I = \sum_{n \geq 0} \phi_n \int_0^\infty t^{n - 3/2 - 1} dt
+
+I = \sum_{n \geq 0} \phi_n \langle n - 3/2 \rangle
+
+Aplicamos la regla, cambiar sumatorias e indicar por la gamma
+
+I = \Gamma[-n] _{ n - 3/2 = 0 }
+
+I = \Gamma[-n] _{ n = 3/2 }
+
+I = \Gamma[-3/2]
+
+Ahora esta integral es posible comprobarla con la definición de la gamma:
+
+I = \int_0^\infty t^{-5/2} e^{-t} dt
+
+el mismo truco de sumar y restar por 1:
+
+I = \int_0^\infty t^{-5/2 + 1 - 1} e^{-t} dt
+
+I = \int_0^\infty t^{-3/2 - 1} e^{-t} dt
+
+I = \Gamma[-3/2]
+
+________________
+
+Vamos una vez más con una integral que suele hacerse computacionalmente, nuestra tarea es demostrar:
+
+S = \int_0^\infty \frac{\sin x}{x} dx = \frac{\pi}{2}
+
+el seno tiene la siguiente expansion en series:
+
+\sin x = \sum_n (-1)^n \frac{x^{2n+1}}{(2n+1)!}
+
+pero observa que esto no tiene indicador, asi que multiplicaremos por factorial sobre factorial, lo mismo que multiplicar por 1
+
+\sin x = \sum_n (-1)^n \frac{x^{2n+1}}{(2n+1)!} \frac{n!}{n!}
+
+\sin x = \sum_n  \frac{(-1)^n}{n!} n! \frac{x^{2n+1}}{(2n+1)!} 
+
+\sin x = \sum_n  \phi_n n! \frac{x^{2n+1}}{(2n+1)!} 
+
+ahora nos sera más facil trabajar con Gammas que factoriales, asi que reemplazamos usando
+\Gamma[n+1] = n!
+
+\sin x = \sum_n  \phi_n n! \frac{x^{2n+1}}{(2n+1)!} 
+\sin x = \sum_n  \phi_n \Gamma[n+1] \frac{x^{2n+1}}{\Gamma[2n+2]} 
+
+Ahora reemplazamos esta expresión:
+
+ \sum_n  \phi_n \Gamma[n+1] \frac{x^{2n+1}}{\Gamma[2n+2]} 
+S = \int_0^\infty \frac{\sin x}{x} dx 
+
+S = \int_0^\infty \frac{1}{x}  \sum_n  \phi_n \Gamma[n+1] \frac{x^{2n+1}}{\Gamma[2n+2]}  dx 
+
+S =  \sum_n  \phi_n \frac{\Gamma[n+1] }{\Gamma[2n+2]} \int_0^\infty \frac{1}{x} x^{2n+1}  dx 
+
+S =  \sum_n  \phi_n \frac{\Gamma[n+1] }{\Gamma[2n+2]} \int_0^\infty \frac{x^{2n+1} }{x}  dx 
+
+S =  \sum_n  \phi_n \frac{\Gamma[n+1] }{\Gamma[2n+2]} \int_0^\infty x^{2n}  dx 
+
+luego de haber simplificado todo lo posible, creamos los brakets
+
+S =  \sum_n  \phi_n \frac{\Gamma[n+1] }{\Gamma[2n+2]} \int_0^\infty x^{2n+1-1}  dx 
+
+S =  \sum_n  \phi_n \frac{\Gamma[n+1] }{\Gamma[2n+2]} \langle 2n+1 \rangle
+
+procedemos a aplicar la regla de brakets, para ello habremos primero de despejar n, esto se logra con esta propiedad
+
+\langle 2n+1 \rangle = \frac{1}{2} \langle n+ \frac{1}{2} \rangle
+
+
+
+S =  \sum_n  \phi_n \frac{\Gamma[n+1] }{\Gamma[2n+2]} \langle 2n+1 \rangle
+
+
+S =  \sum_n  \phi_n \frac{\Gamma[n+1] }{\Gamma[2n+2]} \frac{1}{2} \langle n+ \frac{1}{2} \rangle
+
+ahora si a aplicar la regla:
+
+el braket se convierte en una evaluación:
+
+S =  \sum_n  \phi_n \frac{\Gamma[n+1] }{\Gamma[2n+2]} \frac{1}{2} |_{n+ \frac{1}{2} = 0}
+
+S =  \sum_n  \phi_n \frac{\Gamma[n+1] }{\Gamma[2n+2]} \frac{1}{2} |_{n=-\frac{1}{2} }
+
+una sumatoria y un indicador pasan a convertirse en un gamma:
+
+S =  \Gamma[-n] \frac{\Gamma[n+1] }{\Gamma[2n+2]} \frac{1}{2} |_{n=-\frac{1}{2} }
+
+y a reemplzar
+
+S =  \Gamma[-(-\frac{1}{2} )] \frac{\Gamma[-\frac{1}{2} +1] }{\Gamma[2(-\frac{1}{2} )+2]} \frac{1}{2}
+
+S =  \Gamma[\frac{1}{2}] \frac{\Gamma[-\frac{1}{2} +1] }{\Gamma[2(-\frac{1}{2} )+2]} \frac{1}{2}
+
+S =  \Gamma[\frac{1}{2}] \frac{\Gamma[\frac{1}{2}] }{\Gamma[2(-\frac{1}{2} )+2]} \frac{1}{2}
+
+S =  \Gamma[\frac{1}{2}] \frac{\Gamma[\frac{1}{2}] }{\Gamma[-1+2]} \frac{1}{2}
+
+S =  \Gamma[\frac{1}{2}] \frac{\Gamma[\frac{1}{2}] }{\Gamma[1]} \frac{1}{2}
+
+gamma de 1 es 1:
+
+S =  \Gamma[\frac{1}{2}] Gamma[\frac{1}{2}] \frac{1}{2}
+
+S =  \Gamma[\frac{1}{2}] Gamma[\frac{1}{2}] \frac{1}{2}
+
+gamma de 1/2 es la raiz de pi
+
+S =  \sqrt{pi} \sqrt{pi} \frac{1}{2}
+
+S =  \pi \frac{1}{2}
+
+S =  \frac{\pi}{2}
+
+y asi queda demostrado:
+
+\int_0^\infty \frac{\sin x}{x} dx = \frac{\pi}{2}
+
+
+
+
+
