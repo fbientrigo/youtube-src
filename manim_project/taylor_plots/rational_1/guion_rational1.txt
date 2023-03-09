@@ -13,4 +13,29 @@ para pasar a hipergeometrica recordemos que
 es necesario el n factorial bajo el x, por tanto basta con multiplicar
 arriba y abajo por este
 
-                = \sum_n  x^n
+                = \sum_n \frac{n!}{n!}  x^n
+
+Lo siguiente es escribir n! como un pochhammer, lo cual es bastante facil
+partiendo de la definición del pochhammer
+
+### convertir n! a un simbolo de pochhammer (rising factorial)
+
+pochhammer
+(a)_n = \frac{\Gamma[a+n]}{\Gamma[n]}
+
+n! = \Gamma[n+1]
+
+notar la similitud, que tal si utilizamos \Gamma[1], multiplicamos arriba y abjo,
+de manera de agregarlo al denominador:
+
+n! = \Gamma[n+1] \frac{\Gamma[1]}{\Gamma[1]}
+
+n! = \frac{\Gamma[n+1]}{\Gamma[1]} \Gamma[1]
+
+n! = (1)_n \Gamma[1]
+
+mientras que \Gamma[1] = 0! = 0
+
+n! = (1)_n
+
+citar el video de gamma's con anki
