@@ -1,0 +1,16 @@
+Notesé como en esta expansión, a pesar de incluir 4 veces la cantidad de
+terminos utilizadas en otras; no conseguimos describir más allá de la función.
+
+Y es que si le hacemos un analizis de estabilidad a esta función, lo
+cual se vuelve mucho más facil si la convertimos en hipergeoemtrica
+
+\frac{1}{1-x} = \sum_n x^n
+
+para pasar a hipergeometrica recordemos que 
+
+{}_pF_q[a_p; b_q | x] = \sum_n \frac{\{a_p\}}{\{b_q\}} \frac{x^n}{n!}
+
+es necesario el n factorial bajo el x, por tanto basta con multiplicar
+arriba y abajo por este
+
+                = \sum_n  x^n
