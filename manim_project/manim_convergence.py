@@ -42,34 +42,33 @@ class toHipergeometric(Scene):
         self.wait(q)
 
         # ahora es necesario tener Pochhammer
-        self.play(FadeOut(f1_sum))
-        f1_sum2 = MathTex(r'\sum_n n! \frac{x^n}{n!}')
-        self.play(Write(f1_sum2))
+        f1_sum2_2 = MathTex(r'\sum_n n! \frac{x^n}{n!}')
+        self.play(Transform(f1_sum, f1_sum2_2))
         self.wait(q)
 
         f1_sum2_2 = MathTex(r'n!')
-        self.play(Transform(f1_sum2, f1_sum2_2))
-        self.play(f1_sum2.animate.shift(0.8 * LEFT))
+        self.play(Transform(f1_sum, f1_sum2_2))
+        self.play(f1_sum.animate.shift(0.8 * LEFT))
         fac_gam = MathTex(r'= \Gamma[n+1]')
-        fac_gam.next_to(f1_sum2, RIGHT)
+        fac_gam.next_to(f1_sum, RIGHT)
         self.play(Write(fac_gam))
         self.wait(s) # ahora multiplicamos arriba y abajo
 
         fac_gam2 = MathTex(r'= \Gamma[n+1] \frac{\Gamma[1]}{\Gamma[1]}')
-        fac_gam2.next_to(f1_sum2, RIGHT)
+        fac_gam2.next_to(f1_sum, RIGHT)
         self.play(Transform(fac_gam, fac_gam2))
         fac_gam2 = MathTex(r'= \frac{\Gamma[n+1]}{\Gamma[1]} \Gamma[1]')
-        fac_gam2.next_to(f1_sum2, RIGHT)
+        fac_gam2.next_to(f1_sum, RIGHT)
         self.play(Transform(fac_gam, fac_gam2))
         self.wait(m) # aqui tenemos el pochhammer
 
         fac_gam2 = MathTex(r'= (1)_n \Gamma[1]')
-        fac_gam2.next_to(f1_sum2, RIGHT)
+        fac_gam2.next_to(f1_sum, RIGHT)
         self.play(Transform(fac_gam, fac_gam2))
         self.wait(q) #gamma de 1 vale 1
 
         fac_gam2 = MathTex(r'= (1)_n')
-        fac_gam2.next_to(f1_sum2, RIGHT)
+        fac_gam2.next_to(f1_sum, RIGHT)
         self.play(Transform(fac_gam, fac_gam2))
         self.wait(q) #gamma de 1 vale 1
 
@@ -84,10 +83,28 @@ class toHipergeometric(Scene):
         f1_hyper = MathTex(r'= \sum_n (1)_n \frac{x^n}{n!}')
         f1_hyper.next_to(f1_left, RIGHT)
         self.play(Transform(f1_sum2, f1_hyper))
+        self.wait(m)
+        f1_hyper = MathTex(r'= {}_1F_0 [1; | x]')
+        f1_hyper.next_to(f1_left, RIGHT)
+        self.play(Transform(f1_sum2, f1_hyper))
+        self.wait(ss)
+
 
 
 
 class convergence(Scene):
     """ convergencia de una hipergeoemtrica mediante las reglas"""
     def construct(self):
-        pass
+        self.play(Write(hipergeo))
+        self.wait(m)
+        self.play(hipergeo.animate.shift(2*UP))
+
+        convergence_rule = MathTex(r'p = q + 1')
+        convergence_rule.shift(2*LEFT)
+        self.play(Write(convergence_rule))
+        radius = MathTex(r'|x| < 1')
+        radius.next_to(convergence_rule, RIGHT)
+        self.play(Write(radius))
+        self.wait(s)
+
+

@@ -1,0 +1,7 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/fbien.DESKTOP-6FMEAR7/Documents/# Proyectos/Fabi Profe/youtube-src/manim_project/media/videos/manim_convergence/480p15/partial_movie_files/convergence/4266129954_1128673289_223132457.mp4'
+file 'file:C:/Users/fbien.DESKTOP-6FMEAR7/Documents/# Proyectos/Fabi Profe/youtube-src/manim_project/media/videos/manim_convergence/480p15/partial_movie_files/convergence/1442284246_2750955292_1092395291.mp4'
+file 'file:C:/Users/fbien.DESKTOP-6FMEAR7/Documents/# Proyectos/Fabi Profe/youtube-src/manim_project/media/videos/manim_convergence/480p15/partial_movie_files/convergence/1442284246_1948140110_2593411973.mp4'
+file 'file:C:/Users/fbien.DESKTOP-6FMEAR7/Documents/# Proyectos/Fabi Profe/youtube-src/manim_project/media/videos/manim_convergence/480p15/partial_movie_files/convergence/1442284246_2862974275_3788761768.mp4'
+file 'file:C:/Users/fbien.DESKTOP-6FMEAR7/Documents/# Proyectos/Fabi Profe/youtube-src/manim_project/media/videos/manim_convergence/480p15/partial_movie_files/convergence/1442284246_3784348813_2570915794.mp4'
+file 'file:C:/Users/fbien.DESKTOP-6FMEAR7/Documents/# Proyectos/Fabi Profe/youtube-src/manim_project/media/videos/manim_convergence/480p15/partial_movie_files/convergence/1442284246_893228219_1901699406.mp4'
