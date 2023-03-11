@@ -1,6 +1,6 @@
 from manim import *
 
-bt = 1.5 #base speed
+bt = 0.9 #base speed
 q = 0.3 * bt #quick
 m = 0.8 * bt #medium
 s = 1.2 * bt #slow
@@ -90,6 +90,27 @@ class toHipergeometric(Scene):
         self.wait(ss)
 
 
+
+class seriesconvergence(Scene):
+    """ convergencia de una serie normal """
+    def construct(self):
+        # de los test mas comunes es ek de d'Alamberts, ratio test
+        ratio_test = MathTex(r'\lim_{n \to \infty} |\frac{a_{n+1}}{ a_n }| = r')
+        self.play(Write(ratio_test))
+        self.wait(s)
+        self.play(ratio_test.animation.shift(1.4*UP))
+        self.wait(q)
+        r_div = MathTex(r'r > 1')
+        r_conv = MathTex(r'r < 1')
+        r_1 = MathTex(r'r = 1')
+
+        self.play(FadeOut(ratio_test))
+        
+        # integral test
+        integral_test = MathTex(r'')
+        self.play(Write(integral_test))
+        self.wait(s)
+        self.play(FadeOut(integral_test))
 
 
 class convergence(Scene):
