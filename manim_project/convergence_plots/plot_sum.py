@@ -10,7 +10,14 @@ def plot_summation(serie, title=r'Visualizar suma'):
     # color a las barras
     plus_color, minus_color = 'blue', 'red'
 
-    fig, ax = plt.subplots()    
+    fig, ax = plt.subplots()
+
+    if cumulative_series[0] > 0:
+        bar_color = plus_color
+    else:
+        bar_color = minus_color
+    ax.bar(0, cumulative_series[0], color=bar_color, bottom=0) 
+
     for i in range(1, len(cumulative_series)):
         sum = cumulative_series[i] - cumulative_series[i-1]
         if sum < 0:
@@ -30,7 +37,7 @@ def plot_summation(serie, title=r'Visualizar suma'):
 
 if __name__ == '__main__':
     N = 14
-    # \sum_n n
+    # \sum_n na
     serie = [ n / np.math.factorial(n) for n in range(N)]
     plot_summation(serie)
     plt.show()
