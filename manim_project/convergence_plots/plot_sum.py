@@ -1,3 +1,6 @@
+# plot_sum.py
+# March 2023 - fbientrigo
+
 import numpy as np
 import matplotlib.pyplot as plt
 
