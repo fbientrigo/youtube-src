@@ -57,9 +57,12 @@ class braket(Symbol):
         """
         return self.argument.coeff(symbol)
 
-    def modified(self, symbol : Symbol):
+    def normalize(self, symbol : Symbol):
         """
         Returns a new braket object with the modified argument as described.
+
+        \sum_n <a*n + b> = \sum_n (1/|a|) <n + b/a>
+
         """
         coeff_n = self.coefficients(symbol)
         if coeff_n == 0:
@@ -69,30 +72,73 @@ class braket(Symbol):
             return coeff_n * braket(new_arg)
 
 
-
-def extract_equations(expresion: Mul):
+def get_equations(expresion):
     """
-    Extracts all equations from the argument of the multibraket.
-    Returns a list of equations.
+    Extract the equations from all brakets present in themselves or multiplication
     """
     equations = []
     symbols_in_braket = []
-    for term in expresion.args:
-        if isinstance(term, braket):
-            # get the inside of a braket
-            eq = term.argument
-            equations.append(eq) # append as equation
 
-            free_symbols = eq.free_symbols #see symbols inside a braket
-            for symbol in free_symbols: 
-                if symbol not in symbols_in_braket: # add the symbol if not already added
-                    symbols_in_braket.append(symbol)
     
-    return {'symbols': symbols_in_braket, 'equations': equations}
+    if isinstance(expresion, braket):
+        eq = expresion.argument
+        equations.append(eq) # append as equation
+
+        free_symbols = eq.free_symbols #see symbols inside a braket
+        for symbol in free_symbols: 
+            if symbol not in symbols_in_braket: # add the symbol if not already added
+                symbols_in_braket.append(symbol)
+
+        return {'symbols': symbols_in_braket, 'equations': equations}
+
+
+    if isinstance(expresion, Mul):
+        for term in expresion.args:
+            if isinstance(term, braket):
+                # get the inside of a braket
+                eq = term.argument
+                equations.append(eq) # append as equation
+
+                free_symbols = eq.free_symbols #see symbols inside a braket
+                for symbol in free_symbols: 
+                    if symbol not in symbols_in_braket: # add the symbol if not already added
+                        symbols_in_braket.append(symbol)
+        return {'symbols': symbols_in_braket, 'equations': equations}
 
 
 
 
+def normalize_braket(expresion):
+    """
+    Not neccesary, the use of going throught every braket and using braket.modified()
+    but all of this occurs in the use of matrix
+    """
+    pass
+
+
+
+def solve_braket_equations(expresion):
+    """
+    Extracts all equations from the argument of the multibraket.
+    
+    Extracts all the symbols contained inside all of brakets
+    then creates a J matrix (square)
+    and solves the system of equations
+
+    returns 
+        - the normalization_coefficient = 1 / |det J|
+        - the solutions of the equations
+
+    """
+
+    # obtains equations of the shape of dict {'symbols': [..], 'equations': [..]}
+    data = get_equations(expresion)
+
+    # square matrix for the normalization of brakets in bulk
+    J = Matrix([[eq.diff(var) for var in data['symbols']] for eq in data['equations']])
+    solutions = solve(data['equations'], data['symbols'])
+
+    return {'coefficient': 1/abs(det(J)), 'solutions': solutions}
 
 
 #=========================================================
