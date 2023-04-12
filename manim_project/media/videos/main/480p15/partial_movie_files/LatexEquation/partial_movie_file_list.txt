@@ -1,3 +1,0 @@
-# This file is used internally by FFMPEG.
-file 'file:C:/Users/fbien.DESKTOP-6FMEAR7/Documents/# Proyectos/Fabi Profe/Video Braket/manim_project/media/videos/main/480p15/partial_movie_files/LatexEquation/1848266196_549247060_223132457.mp4'
-file 'file:C:/Users/fbien.DESKTOP-6FMEAR7/Documents/# Proyectos/Fabi Profe/Video Braket/manim_project/media/videos/main/480p15/partial_movie_files/LatexEquation/1583911481_125286499_2524461885.mp4'

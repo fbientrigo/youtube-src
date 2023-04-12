@@ -69,7 +69,7 @@ class Multiplication(Scene):
         integral_2 = MathTex(r'\frac{1}{\alpha} \int_{0}^{\infty} t^{n + \frac{b}{\alpha}  - 1 } dt')
         self.play(Transform(integral, integral_2))
         self.wait(ss)
-        integralb = MathTex(r'= \langle n + \frac{b}{\alpha} \rangle')
+        integralb = MathTex(r'= \frac{1}{\alpha} \langle n + \frac{b}{\alpha} \rangle')
         self.play(integral.animate.shift(LEFT))
         integralb.next_to(integral, RIGHT)
         self.play(Write(integralb))
